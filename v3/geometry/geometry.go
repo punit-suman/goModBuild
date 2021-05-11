@@ -2,6 +2,7 @@ package geometry
 
 import (
 	"errors"
+	"math"
 )
 
 func RectangleArea(a, b float64) (float64, error) {
@@ -22,5 +23,12 @@ func CircleArea(r float64) (float64, error) {
 	if r <= 0 {
 		return 0, errors.New("enter only positive values for radius")
 	}
-	return 3.1416 * r * r, nil
+	return math.Pi * r * r, nil
+}
+
+func CircleCircumference(r float64) (float64, error) {
+	if r <= 0 {
+		return 0, errors.New("enter only positive values for radius")
+	}
+	return 2 * math.Pi * r, nil
 }
